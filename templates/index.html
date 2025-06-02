@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- link to the CSS file, use url_for to get the correct path automatically -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Hello World</h1>
-    <button onclick=>Click Me!</button>
+
+    <button id="myButton"> Click Me To Fetch Data! </button>
+    <div id="responseArea"></div>
+
+    <!-- link to the JS file, use url_for to get the correct path automatically -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
