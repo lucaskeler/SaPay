@@ -8,6 +8,11 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/scanner')
+def scanner():
+    return render_template('scanner.html')
+
+
 # API endpoint our JS script calls 
 @app.route('/get-data', methods=['GET'])
 def get_data():

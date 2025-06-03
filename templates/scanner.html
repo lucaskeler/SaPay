@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<!-- templates/index.html -->
+{% extends "base.html" %}
 
-    <!-- link to the CSS file, use url_for to get the correct path automatically -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <h1>Hello World</h1>
+{% block title %}Scanner{% endblock %}
 
-    <button id="myButton"> Click Me To Fetch Data! </button>
-    <div id="responseArea"></div>
-    <div id="reader" width="600px"></div>
+{% block content %}
+  <h1>Scanner Page</h1>
 
-    <button id="startScanButton">Start Scanning</button>
-    <button id="stopButton">Stop Scanning</button>
+  <button id="myButton">Click Me To Fetch Data!</button>
+  <div id="responseArea"></div>
+  <div id="reader" width="600px"></div>
 
-    <!-- link to the HTML5 QR code library -->
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-    
-    <!-- link to the JS file, use url_for to get the correct path automatically -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
-</html>
+  <button id="startScanButton">Start Scanning</button>
+  <button id="stopButton">Stop Scanning</button>
+{% endblock %}
