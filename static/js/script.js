@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Html5Qrcode.getCameras()
             .then(cameras => {
                 if (cameras && cameras.length) {
-                    startScanner(cameras[0].id);
+                    startScanner(cameras[1].id);
                 } else {
                     console.error("No cameras found.");
                 }
