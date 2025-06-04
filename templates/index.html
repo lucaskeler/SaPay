@@ -1,9 +1,15 @@
-<!-- templates/scanner.html -->
+<!-- templates/index.html -->
 {% extends "base.html" %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}SaPay - Business Payment Solutions{% endblock %}
 
 {% block content %}
-  <h1>Homepage</h1>
-  <a href="/scanner" class="btn">Go to Scanner</a>
+<div class="content-wrapper">
+  <h1>Welcome to SaPay</h1>
+  <div class="card text-center">
+    <h3>Your Business Payment Solution</h3>
+    <p>Streamline your payment processing with our advanced QR code scanner and business management tools.</p>
+    <a href="/scanner" class="btn">Start QR Scanner</a>
+  </div>
+</div>
 {% endblock %}
