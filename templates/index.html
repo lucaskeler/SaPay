@@ -6,8 +6,15 @@
 {% block content %}
 <div class="content-wrapper">
   <div class="card text-center">
-      <img src= "{{ url_for('static', filename='img/bank_card.png')}}">
+      <img src="{{ url_for('static', filename='img/bank_card.png')}}" alt="bank card">
   </div>
-  <a href="/scanner" class="btn text-center" id="bottom">Scan & Pay</a>
+  <div class="text-center button-group">
+    <button class="btn-circular">₹</button> 
+    <button class="btn-circular">💳</button>
+    <button class="btn-circular">📱</button>
+  </div>
+  <div class="text-center">
+    <a href="/scanner" class="btn">Scan & Pay</a>
+  </div>
 </div>
 {% endblock %}

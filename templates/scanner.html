@@ -6,17 +6,12 @@
 {% block content %}
 <div class="content-wrapper">
   <h1>QR Code Scanner</h1>
-  
   <div class="card text-center mb-3">
-    <h3>Payment Scanner</h3>
-    <p>Use the controls below to start scanning QR codes for payments.</p>
+    <div id="reader"></div>
     <div class="button-group">
       <button id="startScanButton">Start Scanning</button>
       <button id="stopButton">Stop Scanning</button>
     </div>
   </div>
-
-  <div id="reader"></div>
-  <div id="responseArea"></div>
 </div>
 {% endblock %}

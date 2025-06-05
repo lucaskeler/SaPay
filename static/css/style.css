@@ -31,8 +31,9 @@ body {
   background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
   color: var(--dark-gray);
   line-height: 1.6;
-  min-height: 100vh;
+  height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Container and Layout */
@@ -94,7 +95,7 @@ button {
   font-size: 1rem;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 40px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -107,7 +108,8 @@ button {
 }
 
 .btn:before,
-button:before {
+button:before,
+a.btn:before {
   content: '';
   position: absolute;
   top: 0;
@@ -119,7 +121,8 @@ button:before {
 }
 
 .btn:hover:before,
-button:hover:before {
+button:hover:before,
+a.btn:hover:before {
   left: 100%;
 }
 
@@ -127,7 +130,7 @@ button:hover:before {
 .button-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 12px;
   margin: 20px 0;
@@ -135,8 +138,7 @@ button:hover:before {
 
 .button-group .btn,
 .button-group button {
-  margin: 0;
-  min-width: 140px;
+  margin: 10px;
 }
 
 /* Primary Button */
@@ -150,7 +152,7 @@ button:hover:before {
 .btn:hover,
 #startScanButton:hover {
   background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 6px 12px var(--shadow-hover);
 }
 
@@ -165,6 +167,33 @@ button:hover:before {
   background: linear-gradient(135deg, #C53030, var(--danger));
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Circular Button */
+.btn-circular {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: var(--white);
+  border: 2px solid transparent;
+  font-size: 1.2rem;
+  min-width: auto;
+}
+
+.btn-circular:hover {
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px var(--shadow-hover);
+}
+
+.btn-circular:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--shadow);
 }
 
 /* Button Focus States */
@@ -184,20 +213,6 @@ button:focus {
   border: 2px solid var(--light-blue);
   max-width: 600px;
   text-align: center;
-}
-
-#responseArea {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px auto;
-  box-shadow: 0 4px 12px var(--shadow);
-  border-left: 4px solid var(--primary-blue);
-  max-width: 600px;
-  min-height: 60px;
-  font-family: 'Montserrat', monospace;
-  font-size: 0.9rem;
-  line-height: 1.5;
 }
 
 /* Content Wrapper */
@@ -225,6 +240,11 @@ button:focus {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px var(--shadow-hover);
+}
+
+.card img{
+    max-width: 100%;
+    height: auto;
 }
 
 /* Form Elements */
@@ -335,25 +355,27 @@ input:focus, textarea:focus, select:focus {
   }
   
   .btn, button {
-    width: 100%;
+    width: 90%;
     margin: 8px 0;
+    justify-content: space-evenly;
   }
   
-  .button-group {
+  .btn:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  /* .button-group {
     flex-direction: column;
-  }
-  
-  .button-group .btn,
-  .button-group button {
-    width: 100%;
-    min-width: auto;
+  } */
+/*   
+
+  /* Circular buttons maintain size but adjust spacing on mobile */
+  .btn-circular {
+    width: 70px;
+    height: 70px;
+    font-size: 1.1rem;
   }
 
-  .btn#bottom{
-    position: fixed;
-    bottom: 0;
-  }
-  
   #reader {
     margin: 15px 0;
     padding: 15px;
@@ -378,5 +400,17 @@ input:focus, textarea:focus, select:focus {
   .btn, button {
     padding: 14px 20px;
     font-size: 0.95rem;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  /* Ensure circular buttons remain accessible on very small screens */
+  .btn-circular {
+    width: 70px;
+    height: 70px;
+    font-size: 1rem;
+    margin: 6px;
   }
 }
