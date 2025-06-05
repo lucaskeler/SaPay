@@ -100,7 +100,6 @@ a {
 
 a:hover {
   color: var(--dark-blue);
-  text-decoration: underline;
 }
 
 /* Buttons */
@@ -158,18 +157,28 @@ a.btn:hover:before {
 }
 
 /* Primary Button */
-.btn,
-#startScanButton {
+.btn {
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: var(--white);
   border: 2px solid transparent;
 }
 
-.btn:hover,
+.btn:hover {
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-hover);
+}
+
+#startScanButton {
+    background: linear-gradient(135deg, var(--success), #28A745);
+    color: var(--white);
+    border: 2px solid transparent;
+}
+
 #startScanButton:hover {
-  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 12px var(--shadow-hover);
+    background: linear-gradient(135deg, #28A745, var(--success));
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-hover);
 }
 
 /* Secondary Button */
@@ -223,12 +232,58 @@ button:focus {
 #reader {
   background: var(--white);
   border-radius: 12px;
-  padding: 20px;
-  margin: 20px auto;
   box-shadow: 0 8px 24px var(--shadow);
   border: 2px solid var(--light-blue);
-  max-width: 600px;
   text-align: center;
+  min-height: 800px;
+  min-width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#reader video {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+#reader canvas {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+#reader > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure QR scanner overlay is properly centered */
+#reader__scan_region {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#reader__scan_region video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Content Wrapper */
@@ -328,12 +383,13 @@ input:focus, textarea:focus, select:focus {
 /* Loading Animation */
 .loading {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid var(--light-blue);
+  width: 75px;
+  height: 75px;
+  border: 10px solid var(--light-blue);
   border-radius: 50%;
   border-top-color: var(--primary-blue);
   animation: spin 1s ease-in-out infinite;
+  margin: 200px auto;
 }
 
 @keyframes spin {
@@ -400,8 +456,10 @@ input:focus, textarea:focus, select:focus {
   }
 
   #reader {
-    margin: 15px 0;
+    margin: 15px auto;
     padding: 15px;
+    max-width: 90%;
+    min-height: 400px;
   }
   
   .card {
@@ -412,6 +470,15 @@ input:focus, textarea:focus, select:focus {
   .content-wrapper {
     padding: 20px;
     margin: 10px auto;
+  }
+
+  #reader video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #reader__scan_region {
+    max-width: 100%;
   }
 }
 
