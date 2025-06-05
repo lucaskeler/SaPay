@@ -325,7 +325,6 @@ button:focus {
     display: block;
     margin: 0;
     padding: 0;
-    vertical-align: middle;
 }
 
 /* Client Info Container */
