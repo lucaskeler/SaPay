@@ -5,13 +5,29 @@
 
 {% block content %}
 <div class="content-wrapper">
+  <div class="desc-card text-center">
+    <p>Selected Card</p>
+  </div>
   <div class="card text-center">
       <img src="{{ url_for('static', filename='img/bank_card.png')}}" alt="bank card">
   </div>
   <div class="text-center button-group">
-    <button class="btn-circular">₹</button> 
-    <button class="btn-circular">💳</button>
-    <button class="btn-circular">📱</button>
+    <button class="btn-circular">🔁</button> 
+    <button class="btn-circular">➕</button>
+    <button class="btn-circular">🚫</button>
+  </div>
+  <div class="text-center text-group">
+    <p>Swap Card</p>
+    <p>Add Card</p>
+    <p>Delete Card</p>
+  </div>
+  <div class="card text-center">
+    <!-- transaction details -->
+    <!-- inline CSS as a placeholder for now -->
+    <div style="padding: 1rem;">
+      <h3 style="margin-bottom: 1rem; color: #333;">Recent Transactions</h3>
+      <p style="color: #999; font-size: 0.9rem;">No Transactions Yet! 💸</p>
+    </div>
   </div>
   <div class="text-center">
     <a href="/scanner" class="btn">Scan & Pay</a>

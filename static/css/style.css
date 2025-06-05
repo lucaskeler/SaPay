@@ -3,6 +3,7 @@
 
 /* SaPay Color Palette */
 :root {
+  --black: #000000;
   --primary-blue: #3366CC;
   --secondary-blue: #4285F4;
   --dark-blue: #1a4480;
@@ -55,31 +56,46 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--dark-blue);
   margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--secondary-blue);
   margin-bottom: 0.75rem;
 }
 
 p {
   font-size: 1rem;
-  color: var(--medium-gray);
-  margin-bottom: 1rem;
+  color: var(--black);
   line-height: 1.7;
+  font-weight: 600;
+}
+
+
+/* Text Group */
+.text-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
 }
 
 /* Navigation Links */
 a {
   color: var(--secondary-blue);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   transition: all 0.3s ease;
+  font-size: 1.5rem;
 }
 
 a:hover {
@@ -91,8 +107,8 @@ a:hover {
 .btn,
 button {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   padding: 12px 24px;
   border: none;
   border-radius: 40px;
@@ -171,8 +187,8 @@ a.btn:hover:before {
 
 /* Circular Button */
 .btn-circular {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   padding: 0;
   display: flex;
@@ -181,7 +197,7 @@ a.btn:hover:before {
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: var(--white);
   border: 2px solid transparent;
-  font-size: 1.2rem;
+  font-size: 2rem;
   min-width: auto;
 }
 
@@ -217,7 +233,7 @@ button:focus {
 
 /* Content Wrapper */
 .content-wrapper {
-  background: var(--white);
+  background: var(--light-blue);
   border-radius: 16px;
   padding: 40px;
   margin: 20px auto;
@@ -227,7 +243,7 @@ button:focus {
 }
 
 /* Cards and Sections */
-.card {
+.card, .desc-card {
   background: var(--white);
   border-radius: 12px;
   padding: 24px;
@@ -237,9 +253,16 @@ button:focus {
   transition: all 0.3s ease;
 }
 
-.card:hover {
+.card:hover, .desc-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px var(--shadow-hover);
+}
+
+.desc-card {    
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 10px;
 }
 
 .card img{
@@ -371,8 +394,8 @@ input:focus, textarea:focus, select:focus {
 
   /* Circular buttons maintain size but adjust spacing on mobile */
   .btn-circular {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     font-size: 1.1rem;
   }
 
@@ -399,7 +422,7 @@ input:focus, textarea:focus, select:focus {
   
   .btn, button {
     padding: 14px 20px;
-    font-size: 0.95rem;
+    font-size: 1.5rem;
   }
 
   .btn:hover {
@@ -408,9 +431,9 @@ input:focus, textarea:focus, select:focus {
 
   /* Ensure circular buttons remain accessible on very small screens */
   .btn-circular {
-    width: 70px;
-    height: 70px;
-    font-size: 1rem;
+    width: 75px;
+    height: 75px;
+    font-size: 2rem;
     margin: 6px;
   }
 }
