@@ -175,7 +175,7 @@ a.btn:hover:before {
     border: 2px solid transparent;
 }
 
-#confirmButton, #startScanButton:hover {
+#confirmButton:hover, #startScanButton:hover {
     background: linear-gradient(135deg, #28A745, var(--success));
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-hover);
