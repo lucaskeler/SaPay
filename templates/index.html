@@ -6,7 +6,8 @@
 {% block content %}
 <div class="content-wrapper">
   <div class="card text-center">
-    <a href="/scanner" class="btn">Scan & Pay</a>
+      <img src= "{{ url_for('static', filename='img/bank_card.png')}}">
   </div>
+  <a href="/scanner" class="btn text-center" id="bottom">Scan & Pay</a>
 </div>
 {% endblock %}

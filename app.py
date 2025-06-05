@@ -13,7 +13,7 @@ def scanner():
     return render_template('scanner.html')
 
 @app.route('/loading')
-def scanner():
+def loading():
     return render_template('loading.html')
 
 if __name__ == '__main__':
