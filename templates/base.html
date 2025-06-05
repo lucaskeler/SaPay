@@ -19,5 +19,8 @@
 
   <!-- Your own JS -->
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <!-- Custom JS for pages -->
+  {% block scripts %}{% endblock %}
 </body>
 </html>
