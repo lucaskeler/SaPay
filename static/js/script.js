@@ -59,25 +59,38 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(err => console.error("Failed to stop/clear scanner:", err));
     }
 
-    startScanButton.addEventListener('click', () => {
-        if (isScanning) {
-            console.log("Scanner already running.");
-            return;
-        }
-        Html5Qrcode.getCameras()
-            .then(cameras => {
-                if (cameras && cameras.length) {
-                    startScanner(cameras[1].id);
-                } else {
-                    console.error("No cameras found.");
-                }
-            })
-            .catch(err => {
-                console.error("Error getting cameras:", err);
-            });
-    });
+    if (startScanButton) {
+        startScanButton.addEventListener('click', () => {
+            if (isScanning) {
+                console.log("Scanner already running.");
+                return;
+            }
+            Html5Qrcode.getCameras()
+                .then(cameras => {
+                    if (cameras && cameras.length) {
+                        startScanner(cameras[1].id);
+                    } else {
+                        console.error("No cameras found.");
+                    }
+                })
+                .catch(err => {
+                    console.error("Error getting cameras:", err);
+                });
+        });
+    }
 
     if (stopButton) {
         stopButton.addEventListener('click', stopScanner);
+    }
+
+    // Loading page logic
+    // Check if we're on the loading page by looking for a specific element or path
+    if (window.location.pathname === '/loading') {
+        console.log("Loading page detected, starting mock delay...");
+        // Mock loading delay - navigate to payment screen after 2.5 seconds
+        setTimeout(() => {
+            console.log("Navigating to payment screen...");
+            window.location.href = "/payment";
+        }, 2500); // 2.5 seconds delay
     }
 });
