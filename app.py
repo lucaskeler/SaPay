@@ -12,17 +12,9 @@ def home():
 def scanner():
     return render_template('scanner.html')
 
-
-# API endpoint our JS script calls 
-@app.route('/get-data', methods=['GET'])
-def get_data():
-    sample_data = {
-        "message": "Hello from Flask",
-        "status": "success",
-        "items": ["apple", "banana", "cherry"],
-        "timestamp": "Just now"
-    }
-    return jsonify(sample_data)
+@app.route('/loading')
+def scanner():
+    return render_template('loading_screen.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001, ssl_context='adhoc')

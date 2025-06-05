@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (decodedText, decodedResult) => {
                 console.log("QR code detected:", decodedText);
                 // trigger next screen regardless of the QR code content
-                window.location.href = "/loading_screen"; 
+                window.location.href = "/loading"; 
             },
             (errorMessage) => {
                 // ignore parse errors, just keep scanning
