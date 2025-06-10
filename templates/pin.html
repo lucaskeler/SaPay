@@ -1,0 +1,33 @@
+<!-- templates/pin.html -->
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="desc-card text-center">
+        <p>Enter PIN</p>
+    </div>
+    <div class="card text-center">
+        <input id="pinField" readonly> 
+        <div class="button-group">
+            <button class="btn-pin">1</button>
+            <button class="btn-pin">2</button>
+            <button class="btn-pin">3</button>
+            <button class="btn-pin">4</button>
+            <button class="btn-pin">5</button>
+            <button class="btn-pin">6</button>
+            <button class="btn-pin">7</button>
+            <button class="btn-pin">8</button>
+            <button class="btn-pin">9</button>
+        </div>
+        <div class="button-group">
+            <button class="btn-pin">0</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/pages/pin.js') }}"></script>
+{% endblock %}

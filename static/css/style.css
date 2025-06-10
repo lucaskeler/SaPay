@@ -210,6 +210,23 @@ a.btn:hover:before {
   min-width: auto;
 }
 
+.btn-pin {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-gray);
+    color: var(--black);
+    border: 2px solid transparent;
+    font-size: 2rem;
+    font-weight: 500;
+    min-width: auto;
+    border-color: rgba(194, 194, 194, 0.814);
+  }
+
 .btn-circular:hover {
   background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
   transform: translateY(-2px) scale(1.05);
@@ -220,6 +237,17 @@ a.btn:hover:before {
   outline: none;
   box-shadow: 0 0 0 3px var(--shadow);
 }
+
+.btn-pin:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-hover);
+} 
+  
+.btn-pin:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--shadow);
+}
+
 
 /* Button Focus States */
 .btn:focus,
@@ -294,6 +322,13 @@ button:focus {
     text-align: center;
     font-size: 3rem;
     margin-top: 10px;
+}
+
+#pinField {
+    border-color: rgba(194, 194, 194, 0.814);
+    font-size: 4rem;
+    vertical-align: bottom;
+    padding-top: 40px;
 }
 
 #clientName, #clientPhoto {
