@@ -14,6 +14,9 @@
     <!-- Cleave.js handles live currency formatting with ฿ symbol -->
     <input type="text" placeholder="฿ 0.00" id="amountField">
     
+    <!-- Currency conversion display -->
+    <div id="conversionDisplay" class="text-center"></div>
+    
     <div class="text-center">
         <!-- Merchant/payee information display -->
         <div class="desc-card" id="clientPhoto">
@@ -30,6 +33,14 @@
         <a href="/scanner" class="btn">Go Back</a>
     </div>
 </div>
+
+<!-- HTML Template for conversion display (hidden) -->
+<template id="conversionTemplate">
+    <div class="conversion-info">
+        <p><strong class="eur-amount"></strong></p>
+        <p class="exchange-rate"></p>
+    </div>
+</template>
 {% endblock %}
 
 {% block scripts %}

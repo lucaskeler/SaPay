@@ -12,6 +12,11 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+# EU bank selection page route
+@app.route('/bank-selection')
+def bank_selection():
+    return render_template('bank_selection.html')
+
 # QR scanner page route
 @app.route('/scanner')
 def scanner():

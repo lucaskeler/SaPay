@@ -1,0 +1,43 @@
+<!-- EU Bank Selection page - choose connected bank account -->
+{% extends "base.html" %}
+
+{% block title %}SaPay - Select Bank{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <!-- Page instruction header -->
+    <div class="desc-card text-center" style="width: 80%;">
+        <p>Choose Your Bank Account</p>
+    </div>
+    
+    <!-- Available bank accounts list -->
+    <div id="bankList">
+        <!-- Banks will be populated by JavaScript -->
+    </div>
+    
+    <!-- Action buttons -->
+    <div class="text-center">
+        <a href="/" class="btn">Go Back</a>
+    </div>
+</div>
+
+<!-- HTML Template for bank cards (hidden) -->
+<template id="bankCardTemplate">
+    <div class="card bank-card">
+        <div class="bank-card-content">
+            <div class="bank-logo"></div>
+            <div class="bank-info">
+                <h3 class="bank-name"></h3>
+                <p class="bank-country"></p>
+                <p class="bank-balance"></p>
+            </div>
+            <div class="bank-arrow">→</div>
+        </div>
+    </div>
+</template>
+{% endblock %}
+
+{% block scripts %}
+<!-- EU bank selection and account management -->
+<script src="{{ url_for('static', filename='js/pages/bank_selection.js') }}"></script>
+{% endblock %} 

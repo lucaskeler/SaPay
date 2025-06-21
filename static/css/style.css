@@ -427,7 +427,7 @@ button:focus {
     background: var(--success);
     width: 100%;
     font-size: larger;
-    font-weight: 500;
+    font-weight: 600;
 
 }
 
@@ -618,4 +618,66 @@ input:focus, textarea:focus, select:focus {
     font-size: 2rem;
     margin: 6px;
   }
+}
+
+/* Conversion Display */
+.conversion-info {
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--light-blue);
+  border-radius: 8px;
+}
+
+.conversion-info p {
+  margin: 5px 0;
+}
+
+/* Bank Selection Cards */
+.bank-card {
+  margin: 16px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bank-card-content {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.bank-logo {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.bank-info {
+  flex: 1;
+}
+
+.bank-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.bank-country {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.bank-balance {
+  margin: 0;
+  font-weight: bold;
+}
+
+.bank-arrow {
+  color: var(--success);
+  font-size: 1.5rem;
+}
+
+.bank-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(51, 102, 204, 0.2);
 }
