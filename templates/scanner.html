@@ -1,15 +1,22 @@
-<!-- templates/scanner.html -->
+<!-- QR Code Scanner page - camera interface for payment initiation -->
 {% extends "base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}SaPay - QR Scanner{% endblock %}
 
 {% block content %}
 <div class="content-wrapper">
+  <!-- QR code scanner viewport - camera feed appears here -->
+  <!-- JavaScript controls camera access and QR detection -->
   <div id="reader"></div>
+  
+  <!-- Scanner control buttons -->
   <div class="text-center">
     <div class="button-group">
+      <!-- Manual scanner start button -->
       <button id="startScanButton">Start Scanning</button>
+      <!-- Manual scanner stop button -->
       <button id="stopButton">Stop Scanning</button>
+      <!-- Navigation back to home -->
       <a href="/" class="btn">Go Back</a>
     </div>
   </div>

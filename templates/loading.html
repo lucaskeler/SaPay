@@ -1,17 +1,20 @@
-<!-- templates/loading.html -->
+<!-- Loading transition page - provides smooth transitions between payment steps -->
 {% extends "base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}SaPay - Processing{% endblock %}
 
 {% block content %}
 <div class="content-wrapper">
     <div class="text-center">
+        <!-- Animated loading spinner - CSS animation defined in style.css -->
         <div class="loading mb-2"></div>
+        <!-- Back button commented out during loading process -->
         <!-- <a href="/" class="btn">Go Back</a> -->
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
+<!-- Timer script handles automatic navigation after loading delay -->
 <script src="{{ url_for('static', filename='js/pages/timer.js') }}"></script>
 {% endblock %}

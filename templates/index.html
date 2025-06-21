@@ -1,34 +1,44 @@
-<!-- templates/index.html -->
+<!-- Home/Dashboard page - main entry point for SaPay -->
 {% extends "base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}SaPay - Home{% endblock %}
 
 {% block content %}
 <div class="content-wrapper">
+  <!-- Selected card indicator -->
   <div class="desc-card text-center">
     <p>Selected Card</p>
   </div>
+  
+  <!-- Credit card display area -->
   <div class="card text-center">
       <img src="{{ url_for('static', filename='img/bank_card.png')}}" alt="bank card">
   </div>
+  
+  <!-- Card management action buttons -->
   <div class="text-center button-group">
     <button class="btn-circular">🔁</button> 
     <button class="btn-circular">➕</button>
     <button class="btn-circular">🚫</button>
   </div>
+  
+  <!-- Button labels for card actions -->
   <div class="text-center text-group">
     <p>Swap Card</p>
     <p>Add Card</p>
     <p>Delete Card</p>
   </div>
+  
+  <!-- Transaction history section -->
   <div class="card text-center">
-    <!-- transaction details -->
-    <!-- inline CSS as a placeholder for now -->
+    <!-- Placeholder content for transaction display -->
     <div style="padding: 1rem;">
       <h3 style="margin-bottom: 1rem; color: #333;">Recent Transactions</h3>
       <p style="color: #999; font-size: 0.9rem;">No Transactions Yet! 💸</p>
     </div>
   </div>
+  
+  <!-- Main action button - starts the payment flow -->
   <div class="text-center">
     <a href="/scanner" class="btn">Scan & Pay</a>
   </div>

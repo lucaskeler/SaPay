@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // scanning logic 
+    // QR Code Scanner Configuration and Controls
+    // scanning logic with manual start/stop controls
 
     const startScanButton = document.getElementById('startScanButton');
     const stopButton = document.getElementById('stopButton');
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html5QrCode.start(
             cameraId,
             {
+                // scanning configuration
                 fps: 60,    // fames per second
                 qrbox: function(viewfinderWidth, viewfinderHeight) {
                     // Make the qrbox responsive and properly sized

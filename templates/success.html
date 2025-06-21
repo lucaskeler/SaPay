@@ -1,0 +1,31 @@
+<!-- Payment success confirmation page - displays completed transaction -->
+{% extends "base.html" %}
+
+{% block title %}SaPay - Payment Complete{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="text-center">
+        <div class="success-card">Transaction Completed!</div>
+        <!-- Payment amount display - populated from sessionStorage -->
+        <!-- JavaScript retrieves and formats the amount from payment page -->
+        <div class="card" id ="displayField"></div>
+        
+        <!-- Transaction recipient information -->
+        <div class="desc-card" id="clientPhoto">
+            <img src="{{ url_for('static', filename='img/7_eleven.png')}}" alt="client photo">
+        </div>
+        <div class="desc-card" id="clientName">
+            <p>7-Eleven Bangkok</p>
+        </div>
+        
+        <!-- Navigation back to home dashboard -->
+        <a href="/" class="btn">Go Back</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Currency formatting script to display stored payment amount -->
+<script src="{{ url_for('static', filename='js/pages/currency_convert.js') }}"></script>
+{% endblock %}

@@ -1,27 +1,38 @@
-<!-- templates/payment.html -->
+<!-- Payment amount entry page - user inputs transaction amount -->
 {% extends "base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}SaPay - Enter Amount{% endblock %}
 
 {% block content %}
 <div class="content-wrapper">
+    <!-- Page instruction header -->
     <div class="desc-card text-center">
         <p>Enter Amount</p>
     </div>
+    
+    <!-- Amount input field - connected to currency_convert.js for formatting -->
+    <!-- Cleave.js handles live currency formatting with ฿ symbol -->
     <input type="text" placeholder="฿ 0.00" id="amountField">
+    
     <div class="text-center">
+        <!-- Merchant/payee information display -->
         <div class="desc-card" id="clientPhoto">
             <img src="{{ url_for('static', filename='img/7_eleven.png')}}" alt="client photo">
         </div>
         <div class="desc-card" id="clientName">
             <p>7-Eleven Bangkok</p>
         </div>
+        
+        <!-- Action buttons for payment flow -->
+        <!-- Confirm button proceeds to PIN entry -->
         <a href="/pin" class="btn" id="confirmButton">Confirm</a>
+        <!-- Back button returns to QR scanner -->
         <a href="/scanner" class="btn">Go Back</a>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
+<!-- Currency formatting and sessionStorage persistence script -->
 <script src="{{ url_for('static', filename='js/pages/currency_convert.js') }}"></script>
 {% endblock %}

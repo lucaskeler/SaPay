@@ -314,7 +314,7 @@ button:focus {
   margin: 0 auto;
 }
 
-#amountField {
+#amountField, #displayField {
     width: 100%;
     height: 150px;
     border-radius: 30px;
@@ -322,6 +322,13 @@ button:focus {
     text-align: center;
     font-size: 3rem;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#displayField{
+    color: var(--black);
 }
 
 #pinField {
@@ -393,7 +400,7 @@ button:focus {
 }
 
 /* Cards and Sections */
-.card, .desc-card {
+.card, .desc-card, .success-card {
   background: var(--white);
   border-radius: 12px;
   padding: 24px;
@@ -403,16 +410,25 @@ button:focus {
   transition: all 0.3s ease;
 }
 
-.card:hover, .desc-card:hover {
+.card:hover, .desc-card:hover, .desc-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px var(--shadow-hover);
 }
 
-.desc-card {    
+.desc-card, .success-card {    
     width: 50%;
     margin: 0 auto;
     border-radius: 50px;
     padding: 10px;
+}
+
+.success-card {
+    color: var(--white);
+    background: var(--success);
+    width: 100%;
+    font-size: larger;
+    font-weight: 500;
+
 }
 
 .card img{

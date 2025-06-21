@@ -1,27 +1,31 @@
-<!-- templates/base.html -->
+<!-- Base template for SaPay application -->
+<!-- Provides common layout, styles, and scripts for all pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Viewport meta tag for mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}My Flask App{% endblock %}</title>
+  <title>{% block title %}SaPay - Mobile Payment{% endblock %}</title>
 
-  <!-- Common CSS -->
+  <!-- Main CSS stylesheet with responsive design -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
   
-  <!-- Main page content -->
+  <!-- Main content area - each page implements this block -->
   {% block content %}{% endblock %}
 
-  <!-- External JS libraries -->
+  <!-- External JavaScript libraries loaded globally -->
+  <!-- HTML5 QR Code library for camera-based scanning -->
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <!-- Cleave.js for currency input formatting -->
   <script src="https://cdn.jsdelivr.net/npm/cleave.js@1/dist/cleave.min.js"></script>
 
-  <!-- JS for all pages-->
+  <!-- Global script with QR scanner functionality -->
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-  <!-- Custom JS for pages -->
+  <!-- Page-specific JavaScript - each page can add custom scripts -->
   {% block scripts %}{% endblock %}
 </body>
 </html>

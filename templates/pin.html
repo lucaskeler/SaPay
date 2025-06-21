@@ -1,15 +1,21 @@
-<!-- templates/pin.html -->
+<!-- PIN entry page - secure 4-digit authentication -->
 {% extends "base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}SaPay - Enter PIN{% endblock %}
 
 {% block content %}
 <div class="content-wrapper">
+    <!-- Page instruction header -->
     <div class="desc-card text-center">
         <p>Enter PIN</p>
     </div>
+    
+    <!-- PIN input interface -->
     <div class="card text-center">
+        <!-- PIN display field - readonly with asterisk masking -->
         <input id="pinField" readonly> 
+        
+        <!-- Numeric keypad - digits 1-9 -->
         <div class="button-group">
             <button class="btn-pin">1</button>
             <button class="btn-pin">2</button>
@@ -21,6 +27,8 @@
             <button class="btn-pin">8</button>
             <button class="btn-pin">9</button>
         </div>
+        
+        <!-- Zero button in separate row for proper keypad layout -->
         <div class="button-group">
             <button class="btn-pin">0</button>
         </div>
@@ -29,5 +37,6 @@
 {% endblock %}
 
 {% block scripts %}
+<!-- PIN entry logic - auto-proceeds after 4 digits -->
 <script src="{{ url_for('static', filename='js/pages/pin.js') }}"></script>
 {% endblock %}
