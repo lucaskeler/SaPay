@@ -78,6 +78,35 @@ SaPay is an innovative cross-border payment platform that bridges EU open bankin
 - **pyOpenSSL**: HTTPS support for camera access and secure communication
 - **Custom APIs**: Backend payment processing endpoints
 
+### Python Dependencies (requirements.txt)
+
+**Core Web Framework:**
+- `Flask==3.1.1` - Lightweight web framework for rapid development
+- `Werkzeug==3.1.3` - WSGI web application library
+- `Jinja2==3.1.6` - Template engine for HTML rendering
+- `itsdangerous==2.2.0` - Secure data serialization
+- `MarkupSafe==3.0.2` - Safe string handling for templates
+
+**Security & HTTPS:**
+- `pyOpenSSL==25.1.0` - SSL/TLS support for HTTPS camera access
+- `cryptography==45.0.3` - Cryptographic functions and SSL support
+- `cffi==1.17.1` - Foreign function interface for cryptography
+- `pycparser==2.22` - C parser for cryptographic operations
+
+**Payment & API Integration:**
+- `qrcode==8.2` - QR code generation for PromptPay integration
+- `requests==2.32.3` - HTTP library for external API calls
+- `urllib3==2.4.0` - HTTP client library
+- `certifi==2025.4.26` - Certificate authority bundle for SSL verification
+
+**Application Support:**
+- `python-dotenv==1.1.0` - Environment variable management
+- `click==8.2.1` - Command line interface creation
+- `blinker==1.9.0` - Signal/event system for Flask
+- `typing_extensions==4.14.0` - Extended type hints
+- `charset-normalizer==3.4.2` - Character encoding detection
+- `idna==3.10` - Internationalized domain names support
+
 ### Architecture Mapping to Conceptual Innovation
 
 **Innovation**: Direct EU bank account to Thai merchant payment without traditional correspondent banking
