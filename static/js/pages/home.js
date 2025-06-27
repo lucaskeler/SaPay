@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Show default text if no bank is selected
             if (cardStatus) {
-                cardStatus.textContent = 'No Bank Selected - Click 🔁 to choose';
+                cardStatus.textContent = 'No Bank Selected';
                 cardStatus.style.color = '#999';
                 cardStatus.style.fontWeight = 'normal';
             }

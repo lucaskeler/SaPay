@@ -416,7 +416,7 @@ button:focus {
 }
 
 .desc-card, .success-card {    
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     border-radius: 50px;
     padding: 10px;
