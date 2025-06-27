@@ -19,13 +19,12 @@ SaPay is an innovative cross-border payment platform that bridges EU open bankin
 ### Cross-Border Payment Flow
 - **EU Bank Integration**: Mock PSD2 open banking connection
 - **Real-Time Currency Conversion**: EUR ↔ THB with live exchange rates
-- **Cost Savings Calculator**: Compare traditional ATM fees vs SaPay
 - **PromptPay QR Integration**: Seamless Thai merchant payments
 
 ### User Experience
 - **Mobile-First Design**: Optimized for tourist usage
 - **Multi-Step Security**: PIN verification and transaction confirmation
-- **Live Feedback**: Real-time savings and conversion display
+- **Live Feedback**: Real-time conversion display
 - **Intuitive Navigation**: Clear payment flow with loading transitions
 
 ## 🛠️ Technical Architecture
@@ -50,7 +49,7 @@ SaPay is an innovative cross-border payment platform that bridges EU open bankin
 
 ```
 SaPay/
-├── README.md                 # Project documentation
+├── README.md                # Project documentation
 ├── app.py                   # Flask application with routes
 ├── requirements.txt         # Python dependencies
 │
@@ -155,17 +154,6 @@ python app.py
 - Accept SSL certificate warning (self-signed for HTTPS camera access)
 - Click "Swap Card" (🔁) to select your EU bank account
 
-## 📊 Value Proposition
-
-### Cost Comparison (฿500 transaction)
-| Method | Fees | Exchange Rate | Total Cost (EUR) | Savings |
-|--------|------|---------------|------------------|---------|
-| ATM Withdrawal | ฿220 | 37.20 | €19.35 | - |
-| Bank Transfer | ฿150 | 37.50 | €17.33 | €2.02 |
-| **SaPay** | **฿15** | **38.45** | **€13.39** | **€5.96** |
-
-**Result**: 31% cost reduction per transaction
-
 ## 🔒 Security Considerations
 
 ### Current Implementation
@@ -203,7 +191,7 @@ python app.py
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## 👥 Team
 
