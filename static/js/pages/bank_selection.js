@@ -63,8 +63,27 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show selection feedback
         console.log('Selected bank:', bank.bank_name);
         
-        // Navigate back to home page
-        window.location.href = '/';
+        // Add visual feedback
+        const bankCards = document.querySelectorAll('.bank-card');
+        bankCards.forEach(card => {
+            card.style.opacity = '0.5';
+        });
+        
+        // Highlight selected card
+        event.target.closest('.bank-card').style.opacity = '1';
+        event.target.closest('.bank-card').style.border = '2px solid #2196F3';
+        
+        // Add confirmation message
+        const cardStatus = document.querySelector('.desc-card p');
+        if (cardStatus) {
+            cardStatus.textContent = `✅ Selected: ${bank.bank_name}`;
+            cardStatus.style.color = '#4CAF50';
+        }
+        
+        // Navigate back to home page after short delay
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 1000);
     }
     
     function showDefaultBanks() {
@@ -81,6 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 account_id: 'BNP_001',
                 bank_name: 'BNP Paribas', 
                 balance: 1205.75,
+                currency: 'EUR',
+                account_holder: 'Demo User'
+            },
+            {
+                account_id: 'ING_001',
+                bank_name: 'ING Bank',
+                balance: 3156.20,
                 currency: 'EUR',
                 account_holder: 'Demo User'
             }

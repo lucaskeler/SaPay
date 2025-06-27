@@ -44,3 +44,8 @@
   </div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+<!-- Home page functionality for selected bank display -->
+<script src="{{ url_for('static', filename='js/pages/home.js') }}"></script>
+{% endblock %}
