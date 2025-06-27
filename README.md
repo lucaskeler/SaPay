@@ -178,22 +178,6 @@ python test_backend.py
 ```
 Tests bank account access, QR parsing, currency conversion, and full payment flow.
 
-## 🎬 Demo Flow (10 minutes)
-
-1. **Problem Statement** (1 min): Tourist pain points and market opportunity
-2. **Technical Architecture** (2 min): Frontend + Backend integration
-3. **Live Demo** (5 min):
-   - From home dashboard, click "Swap Card" (🔁) to select EU bank
-   - Backend loads Deutsche Bank account (€2,847 balance) via `/api/banks`
-   - Scan Thai merchant QR code (7-Eleven) - parsed via `/api/qr-scan`
-   - Enter payment amount (฿500 = €13.00)
-   - Backend calculates conversion via `/api/convert` - Save ฿205 vs traditional ATM
-   - Complete secure PIN verification
-   - Backend processes payment via `/api/process-payment`
-   - View transaction confirmation with live data
-4. **Backend Testing** (1 min): Show `python test_backend.py` results
-5. **Business Model** (1 min): Revenue streams and scaling strategy
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -261,14 +245,14 @@ curl https://localhost:5001/api/banks
 
 ## ✅ Current Implementation Status
 
-### Frontend (Complete)
+### Frontend
 - ✅ Mobile-responsive UI with 7 pages
 - ✅ QR code scanner with camera integration
 - ✅ Currency formatting and amount persistence
 - ✅ PIN entry system
 - ✅ Multi-step payment flow
 
-### Backend (NEW - Complete)
+### Backend
 - ✅ 5 REST API endpoints
 - ✅ Mock EU bank integration (3 banks)
 - ✅ PromptPay QR code parsing
