@@ -35,7 +35,7 @@ SaPay is an innovative cross-border payment platform that bridges EU open bankin
 - **Live Feedback**: Real-time conversion display and savings calculation
 - **Intuitive Navigation**: Clear payment flow with loading transitions
 
-### Backend Capabilities (NEW)
+### Backend Capabilities 
 - **Mock Banking APIs**: Simulated EU bank account management
 - **Payment Processing**: Full transaction lifecycle from debit to credit
 - **Currency Exchange**: Live rate simulation with realistic market variation
