@@ -14,43 +14,64 @@ SaPay is an innovative cross-border payment platform that bridges EU open bankin
 
 **Market Opportunity**: 77+ million tourist registrations annually in Thailand, with 40+ million from Europe.
 
+## 💰 Value Proposition
+
+- **Cost Savings**: €0.39 SaPay fee vs €5.70 traditional ATM withdrawal fee
+- **Better Exchange Rates**: Real-time interbank rates vs tourist exchange rates
+- **Convenience**: Pay directly at Thai merchants without cash conversion
+- **Security**: EU banking standards with Thai payment integration
+
 ## 🚀 Key Features
 
 ### Cross-Border Payment Flow
-- **EU Bank Integration**: Mock PSD2 open banking connection
+- **EU Bank Integration**: Mock PSD2 open banking connection with 3 major banks
 - **Real-Time Currency Conversion**: EUR ↔ THB with live exchange rates
 - **PromptPay QR Integration**: Seamless Thai merchant payments
+- **Transaction Processing**: End-to-end payment execution with status tracking
 
 ### User Experience
-- **Mobile-First Design**: Optimized for tourist usage
+- **Mobile-First Design**: Optimized for tourist usage on smartphones
 - **Multi-Step Security**: PIN verification and transaction confirmation
-- **Live Feedback**: Real-time conversion display
+- **Live Feedback**: Real-time conversion display and savings calculation
 - **Intuitive Navigation**: Clear payment flow with loading transitions
+
+### Backend Capabilities (NEW)
+- **Mock Banking APIs**: Simulated EU bank account management
+- **Payment Processing**: Full transaction lifecycle from debit to credit
+- **Currency Exchange**: Live rate simulation with realistic market variation
+- **Transaction History**: In-memory storage and retrieval of payment records
 
 ## 🛠️ Technical Architecture
 
 ### Backend
 - **Flask** (Python): Lightweight web framework for rapid prototyping
-- **RESTful Structure**: Clean separation of routes and templates
+- **Mock Services**: Simulated EU banking and Thai PromptPay integration
+- **RESTful APIs**: 5 endpoints for payment processing and bank management
+- **In-Memory Storage**: Simple data persistence using Python dictionaries
 - **Session Management**: Secure data persistence across payment flow
 
 ### Frontend
 - **HTML5**: Modern semantic structure with accessibility
 - **CSS3**: Responsive design with mobile-first approach
 - **Vanilla JavaScript**: Lightweight, no external dependencies
-- **Progressive Enhancement**: Works without JavaScript for core features
+- **AJAX Integration**: Frontend-backend communication via Fetch API
+- **SessionStorage**: Client-side data persistence
 
 ### Libraries & APIs
 - **Html5-QRCode**: Camera-based QR code scanning
 - **Cleave.js**: Real-time currency input formatting
-- **SessionStorage**: Client-side data persistence
+- **Backend APIs**: Custom payment processing endpoints
 
 ## 📁 Project Structure
 
 ```
 SaPay/
 ├── README.md                # Project documentation
-├── app.py                   # Flask application with routes
+├── app.py                   # Flask application with routes & API endpoints
+├── models.py                # Data models for banks, merchants, transactions
+├── services.py              # Payment processing business logic
+├── utils.py                 # Helper functions and utilities
+├── test_backend.py          # Backend testing script
 ├── requirements.txt         # Python dependencies
 │
 ├── templates/               # HTML templates with Jinja2
@@ -111,19 +132,67 @@ sessionStorage.setItem('paymentAmount', amount);
 // PIN verification → Loading → Success confirmation
 ```
 
+## 🔧 Backend Implementation
+
+### API Endpoints
+```
+GET  /api/banks           - List available EU bank accounts
+POST /api/qr-scan         - Parse PromptPay QR codes  
+POST /api/convert         - EUR to THB currency conversion
+POST /api/process-payment - Execute cross-border payment
+GET  /api/transactions    - Retrieve transaction history
+```
+
+### Data Models (models.py)
+```python
+class BankAccount:
+    - account_id, bank_name, balance, currency
+    - can_withdraw(), withdraw() methods
+
+class ThaiMerchant:
+    - merchant_id, business_name, phone_number
+    - PromptPay integration ready
+
+class PaymentTransaction:
+    - transaction_id, amounts, exchange_rate, status
+    - calculate_thb_amount() with live rates
+```
+
+### Core Services (services.py)
+- **get_user_banks()**: Retrieve EU bank accounts
+- **parse_promptpay_qr()**: Parse Thai merchant QR codes
+- **convert_currency()**: EUR/THB conversion with fees
+- **process_payment()**: End-to-end payment execution
+- **get_transaction_history()**: Payment record retrieval
+
+### Demo Data
+- **3 EU Banks**: Deutsche Bank (€2,847), BNP Paribas (€1,205), ING Bank (€3,156)
+- **2 Thai Merchants**: 7-Eleven, FamilyMart with PromptPay IDs
+- **Live Exchange Rate**: ~38.5 EUR/THB with realistic variation
+- **Fee Structure**: €0.39 SaPay fee vs €5.70 traditional ATM fee
+
+### Testing
+Run backend tests independently:
+```bash
+python test_backend.py
+```
+Tests bank account access, QR parsing, currency conversion, and full payment flow.
+
 ## 🎬 Demo Flow (10 minutes)
 
 1. **Problem Statement** (1 min): Tourist pain points and market opportunity
-2. **Technical Architecture** (2 min): Technology stack justification
+2. **Technical Architecture** (2 min): Frontend + Backend integration
 3. **Live Demo** (5 min):
    - From home dashboard, click "Swap Card" (🔁) to select EU bank
-   - Choose Deutsche Bank account (€2,847 balance)
-   - Scan Thai merchant QR code (7-Eleven)
+   - Backend loads Deutsche Bank account (€2,847 balance) via `/api/banks`
+   - Scan Thai merchant QR code (7-Eleven) - parsed via `/api/qr-scan`
    - Enter payment amount (฿500 = €13.00)
-   - See live savings: Save ฿205 vs traditional ATM
+   - Backend calculates conversion via `/api/convert` - Save ฿205 vs traditional ATM
    - Complete secure PIN verification
-   - View transaction confirmation
-4. **Business Model** (2 min): Revenue streams and scaling strategy
+   - Backend processes payment via `/api/process-payment`
+   - View transaction confirmation with live data
+4. **Backend Testing** (1 min): Show `python test_backend.py` results
+5. **Business Model** (1 min): Revenue streams and scaling strategy
 
 ## 🚀 Quick Start
 
@@ -154,6 +223,15 @@ python app.py
 - Accept SSL certificate warning (self-signed for HTTPS camera access)
 - Click "Swap Card" (🔁) to select your EU bank account
 
+### Test Backend Only
+```bash
+# Test payment processing without frontend
+python test_backend.py
+
+# Test API endpoints directly
+curl https://localhost:5001/api/banks
+```
+
 ## 🔒 Security Considerations
 
 ### Current Implementation
@@ -181,13 +259,39 @@ python app.py
 - **Regulatory Compliance**: Financial services licenses (EU & Thailand)
 - **Multi-Currency Support**: Expand beyond EUR-THB corridor
 
+## ✅ Current Implementation Status
+
+### Frontend (Complete)
+- ✅ Mobile-responsive UI with 7 pages
+- ✅ QR code scanner with camera integration
+- ✅ Currency formatting and amount persistence
+- ✅ PIN entry system
+- ✅ Multi-step payment flow
+
+### Backend (NEW - Complete)
+- ✅ 5 REST API endpoints
+- ✅ Mock EU bank integration (3 banks)
+- ✅ PromptPay QR code parsing
+- ✅ Currency conversion with live rates
+- ✅ Full payment processing pipeline
+- ✅ Transaction history and status tracking
+- ✅ Comprehensive test suite
+
+### Technical Debt (For Production)
+- 🔄 Replace in-memory storage with database
+- 🔄 Add proper error handling and logging
+- 🔄 Implement real banking API integration
+- 🔄 Add authentication and authorization
+- 🔄 Enhance security and compliance features
+
 ## 🎯 Next Steps
 
 1. **MVP Validation**: Tourist user testing in Thailand
-2. **Regulatory Approval**: PSD2 and Thai banking compliance
-3. **Bank Partnerships**: Negotiate API access agreements
-4. **Pilot Program**: Limited rollout with select EU banks
-5. **Full Launch**: Scale across major European tourist markets
+2. **Database Integration**: Replace in-memory storage with PostgreSQL
+3. **Real Banking APIs**: Connect to actual PSD2 and PromptPay systems
+4. **Security Enhancement**: Add encryption, authentication, fraud detection
+5. **Regulatory Approval**: PSD2 and Thai banking compliance
+6. **Pilot Program**: Limited rollout with select EU banks
 
 ## 📝 License
 
